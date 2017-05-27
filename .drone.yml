@@ -1,4 +1,5 @@
 pipeline:
+
   build:
     image: golang:1.8
     environment:
