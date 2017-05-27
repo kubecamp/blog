@@ -27,7 +27,7 @@ pipeline:
       - DOCKER_LAUNCH_DEBUG=true
     image: quay.io/ipedrazas/drone-helm
     skip_tls_verify: true
-    chart: ./charts/blog
+    chart: ./chart/blog
     release: ${DRONE_BRANCH}-blog
     prefix: PROD
     debug: true
