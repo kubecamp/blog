@@ -25,7 +25,7 @@ pipeline:
   helm_deploy_production:
     environment:
       - DOCKER_LAUNCH_DEBUG=true
-    image: quay.io/ipedrazas/drone-helm
+    image: quay.io/ipedrazas/drone-helm:master-20c098e
     skip_tls_verify: true
     chart: ./chart/blog
     release: ${DRONE_BRANCH}-blog
