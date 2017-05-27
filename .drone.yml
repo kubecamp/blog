@@ -8,6 +8,7 @@ pipeline:
       - tar xvf /tmp/hugo.tar.gz -C /tmp/
       - mv /tmp/hugo /usr/bin/hugo
       - hugo -b http://blog.kube.camp
+      - ls -latrh
   
   docker-web:
     environment:
