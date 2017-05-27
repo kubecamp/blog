@@ -5,7 +5,7 @@ replicaCount: 1
 image:
   repository: quay.io/ipedrazas/kubecamp-blog
   tag: latest
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 service:
   name: nginx
   type: ClusterIP

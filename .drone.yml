@@ -27,6 +27,7 @@ pipeline:
     skip_tls_verify: true
     chart: ./chart/blog
     release: ${DRONE_BRANCH}-blog
+    values: image.tag=${DRONE_BRANCH}-${DRONE_COMMIT_SHA:0:7}
     prefix: PROD
     secrets: [ prod_api_server, prod_kubernetes_token ]
     when:
