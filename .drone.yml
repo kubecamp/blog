@@ -22,6 +22,19 @@ pipeline:
     debug: true
     secrets: [ docker_username, docker_password ]
 
+  helm_deploy_production:
+    environment:
+      - DOCKER_LAUNCH_DEBUG=true
+    image: quay.io/ipedrazas/drone-helm
+    skip_tls_verify: true
+    chart: ./charts/blog
+    release: ${DRONE_BRANCH}-blog
+    prefix: PROD
+    debug: true
+    secrets: [ prod_api_server, prod_kubernetes_token ]
+    when:
+      branch: [master]
+
   slack_success:
     image: plugins/slack
     channel: deploys
