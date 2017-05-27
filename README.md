@@ -1,4 +1,5 @@
 # blog
+[![Build Status](https://build.kube.camp/api/badges/kubecamp/blog/status.svg)](https://build.kube.camp/kubecamp/blog)
 
 kube.camp blog is based on Hugo using the `base16` theme. Kube.camp runs entirely in kubernetes. In this blog we will be adding articles about how we build and run kube.camp.
 
