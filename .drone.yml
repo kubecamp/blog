@@ -7,7 +7,7 @@ pipeline:
       - curl -L -o /tmp/hugo.tar.gz https://github.com/spf13/hugo/releases/download/v0.20.7/hugo_0.20.7_Linux-64bit.tar.gz
       - tar xvf /tmp/hugo.tar.gz -C /tmp/
       - mv /tmp/hugo /usr/bin/hugo
-      - hugo -b http://blog.kube.camp  
+      - hugo -b https://blog.kube.camp  
   
   docker-web:
     environment:
