@@ -20,7 +20,7 @@ ingress:
     kubernetes.io/ingress.class: nginx
     kubernetes.io/tls-acme: "true"
   tls:
-    Secrets must be manually created in the namespace.
+    # Secrets must be manually created in the namespace.
     - secretName: tls-bundle-blog
       hosts:
         - blog.kube.camp
