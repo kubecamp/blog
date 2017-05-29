@@ -27,9 +27,9 @@ pipeline:
     skip_tls_verify: true
     chart: ./chart/blog
     release: ${DRONE_BRANCH}-blog
-    values: image.tag=${DRONE_BRANCH}-${DRONE_COMMIT_SHA:0:7}
+    values: image.tag=${DRONE_BRANCH}-${DRONE_COMMIT_SHA:0:7},tls.crt=${TLS_CRT},tls.key=${TLS_KEY}
     prefix: PROD
-    secrets: [ prod_api_server, prod_kubernetes_token ]
+    secrets: [ prod_api_server, prod_kubernetes_token, tls_crt, tls_key ]
     when:
       branch: [master]
 
