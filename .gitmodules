@@ -1,3 +1,7 @@
 [submodule "themes/base16"]
 path = themes/base16
 url = https://github.com/htdvisser/hugo-base16-theme.git
+
+[submodule "themes/hyde"]
+path = themes/hyde
+url = https://github.com/spf13/hyde.git

@@ -1,5 +1,9 @@
 baseURL = "http://blog.kube.camp/"
 languageCode = "en-us"
-title = "Kube.Camp Blog"
-theme = "base16"
+title = "blog"
+theme = "hyde"
 
+[params]
+  themeColor = "theme-base-00"
+  layoutReverse = true
+  description = "About kubernetes and distributed systems"
