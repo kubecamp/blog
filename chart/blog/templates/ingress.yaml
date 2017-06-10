@@ -13,7 +13,7 @@ spec:
   tls:
   - hosts:
     - "{{ .Values.ingress.host }}"
-    secretName: tls-bundle-blog #{{ template "fullname" . }}-tls
+    secretName: {{ template "fullname" . }}-tls
 {{- end }}
   rules:
   - host: '{{ .Values.ingress.host }}'
