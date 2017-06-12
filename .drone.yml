@@ -9,7 +9,7 @@ pipeline:
       - mv /tmp/hugo /usr/bin/hugo
       - hugo -b https://blog.kube.camp/  
   
-  docker-web:
+  docker-build:
     environment:
           - DOCKER_API_VERSION=1.24
     image: plugins/docker:1.12
