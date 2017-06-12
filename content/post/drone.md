@@ -79,8 +79,26 @@ ingress.kubernetes.io/ssl-redirect: "true"
 
 that makes that all the `http` request, be redirected to `https`, this means that if we do `https://build.kube.camp`, we should see Drone.
 
-### Testing!
+### Drone builds
 
+Kubernetes doesn't run the latest version of Docker, which it might give you a few headaches. If your builds fail because there's a mismatch in the Docker API version, the solution is fairly simple. If you look at how we build this blog (yes, it runs in kubernetes nd yes, it's built using a Drone that runs in Kubernetes as well):
+
+```
+docker-web:
+    environment:
+          - DOCKER_API_VERSION=1.24
+    image: plugins/docker:1.12
+    repo: quay.io/ipedrazas/kubecamp-blog
+    tags: 
+      - latest
+      - ${DRONE_BRANCH}-${DRONE_COMMIT_SHA:0:7}
+    registry: quay.io
+    email: "info@info.com"
+    debug: true
+    secrets: [ docker_username, docker_password ]
+```
+
+As you can see, we specify the environment variable `DOCKER_API_VERSION=1.24`, another strategy is to run the drone agents with a sidekick container that runs the version of Docker that you want need.
 
 __Resilient__
 Now that we have Drone installed, let's do a few tests. __IF__ you're using a remote database you can destroy the `drone-server` pod safely. The pod will be re-created, and the server will re-connect to the database. 
