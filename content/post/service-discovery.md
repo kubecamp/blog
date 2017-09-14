@@ -1,7 +1,7 @@
 +++
 Description = "Service Discovery with Kubernetes"
 Tags = ["Development", "sd", "services", "istio", "labels", "service discovery"]
-Categories = ["kubernetes", "architecture]
+Categories = ["kubernetes", "architecture"]
 menu = "main"
 date = "2017-09-14T11:08:07+01:00"
 title = "Service Discovery with Kubernetes"
