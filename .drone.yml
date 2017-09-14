@@ -4,10 +4,10 @@ pipeline:
     image: golang:1.8
     environment:
     commands:
-      - curl -L -o /tmp/hugo.tar.gz https://github.com/spf13/hugo/releases/download/v0.20.7/hugo_0.20.7_Linux-64bit.tar.gz
+      - curl -L -o /tmp/hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v0.27.1/hugo_0.27.1_Linux-64bit.tar.gz
       - tar xvf /tmp/hugo.tar.gz -C /tmp/
       - mv /tmp/hugo /usr/bin/hugo
-      - hugo -b https://blog.kube.camp/  
+      - hugo -b http://blog.kube.camp/  
   
   docker-build:
     environment:
