@@ -17,7 +17,7 @@ ingress:
   host: blog.kube.camp
   path: "/"
   ssl:
-    enabled: true
+    enabled: false
   
 resources:
   limits:
