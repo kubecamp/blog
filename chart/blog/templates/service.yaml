@@ -11,5 +11,9 @@ spec:
     targetPort: {{ .Values.service.internalPort }}
     protocol: TCP
     name: {{ .Values.service.name }}
+  - port: {{ .Values.service.ssl.externalPort }}
+    targetPort: {{ .Values.service.internalPort }}
+    protocol: TCP
+    name: {{ .Values.service.ssl.name }}
   selector:
     app: {{ template "fullname" . }}
