@@ -11,17 +11,13 @@ service:
   type: ClusterIP
   externalPort: 80
   internalPort: 80
-  ssl:
-    name: cloudflare
-    externalPort: 443
-    internalPort: 80
 ingress:
   enabled: true
   # Used to create Ingress record (should used with service.type: ClusterIP).
   host: blog.kube.camp
   path: "/"
   ssl:
-    enabled: false
+    enabled: true
   
 resources:
   limits:
